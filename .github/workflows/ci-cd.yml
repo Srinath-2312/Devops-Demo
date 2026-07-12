@@ -1,3 +1,17 @@
-git add .
-git commit -m "Added GitHub Actions pipeline"
-git push
+name: DevOps CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Success Message
+        run: echo "GitHub Actions is working successfully!"
